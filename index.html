@@ -27,6 +27,10 @@
         <p id="recover" class="textdata"></p><br>
         <p class="textmain">Total Active Case :</p>
         <p id="active" class="textdata"></p><br>
+        <p class="textmain">Total PCR Test :</p>
+        <p id="pcr" class="textdata"></p><br>
+        <p class="textmain">Total RTD Test :</p>
+        <p id="rdt" class="textdata"></p><br>
         <p class="textmain">Total Test :</p>
         <p id="test" class="textdata"></p><br>
         <p class="textmain">Next Update :</p>
@@ -59,6 +63,9 @@
             document.getElementById("active").innerHTML = data.tested_positive - data.recovered;
             document.getElementById("test").innerHTML = data.tested_total;
             document.getElementById("next").innerHTML = data.updated_at;
+            document.getElementById("rdt").innerHTML = data.tested_rdt;
+            document.getElementById("pcr").innerHTML = data.tested_total - data.tested_rdt;
+            //console.log(data);
 
         }
         getdata();
