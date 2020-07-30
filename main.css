@@ -1,0 +1,27 @@
+        body {
+            background-color: rgb(61, 61, 61);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        img {
+            display: inline;
+        }
+        
+        .textmain {
+            display: inline;
+            font-size: 25px;
+            color: rgb(213, 236, 232);
+        }
+        
+        .inside {
+            padding: 20px 20px;
+            background-color: rgb(235, 36, 79);
+            border-radius: 20px;
+            margin: 40px 0px;
+        }
+        
+        .textdata {
+            display: inline;
+            font-size: 25px;
+            color: rgb(104, 230, 20);
+        }

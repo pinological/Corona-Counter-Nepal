@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corona Counter</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <center>
+        <div class="inside">
+            <img src="/resurce/nepal.png" alt="nepalflag" height="40px">
+            <p class="textmain">Nepal Corona Case</p>
+            <img src="/resurce/nepal.png" alt="nepalflag" height="40px">
+        </div>
+    </center>
+    <div class="inside">
+        <p class="textmain">Total Positive Case :</p>
+        <p id="totalcase" class="textdata"></p><br>
+        <p class="textmain">Total Death Case :</p>
+        <p id="death" class="textdata"></p><br>
+        <p class="textmain">Total People In Isolation :</p>
+        <p id="isolation" class="textdata"></p><br>
+        <p class="textmain">Total Recovered :</p>
+        <p id="recover" class="textdata"></p><br>
+        <p class="textmain">Total Active Case :</p>
+        <p id="active" class="textdata"></p><br>
+        <p class="textmain">Total Test :</p>
+        <p id="test" class="textdata"></p><br>
+        <p class="textmain">Next Update :</p>
+        <p id="next" class="textdata"></p><br>
+    </div>
+
+
+    <script>
+        const api = 'https://nepalcorona.info/api/v1/data/nepal';
+        async function getdata() {
+            const repsond = await fetch(api);
+            const data = await repsond.json();
+            document.getElementById("totalcase").innerHTML = data.tested_positive;
+            document.getElementById("death").innerHTML = data.deaths;
+            document.getElementById("isolation").innerHTML = data.in_isolation;
+            document.getElementById("recover").innerHTML = data.recovered;
+            document.getElementById("active").innerHTML = data.tested_positive - data.recovered;
+            document.getElementById("test").innerHTML = data.tested_total;
+            document.getElementById("next").innerHTML = data.updated_at;
+
+
+
+            //console.log(data);
+
+        }
+        getdata();
+    </script>
+</body>
+
+</html>
